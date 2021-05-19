@@ -38,7 +38,7 @@ const variants = {
     }
 }
 
-const Pad = ({ src, name, getTracks, removeTrack }) => {
+const Pad = ({ track, getTracks, removeTrack }) => {
     const classes = useStyles();
     const [clicked, setClicked] = useState(false)
     const [flip, setFliped] = useState(false)
@@ -47,16 +47,16 @@ const Pad = ({ src, name, getTracks, removeTrack }) => {
     const handleClickedOn = () => {
         setFliped(true)
         setClicked(true)
-        getTracks(src)
+        getTracks(track)
     }
     const handleClickedOff = () => {
         setFliped(false)
         setClicked(false)
-        removeTrack(src)
+        removeTrack(track)
     }
 
     return (
-        <Grid item xs={4} sm={4}
+        <Grid item xs={4}
             component={motion.div}
             initial={{ x: "-100vh" }}
             animate={{ x: 0 }}
@@ -76,7 +76,7 @@ const Pad = ({ src, name, getTracks, removeTrack }) => {
                         <PlayArrowRoundedIcon className={classes.icon} onClick={handleClickedOn} />
                 }
                 <Typography className={classes.title} variant="h5" display="block" gutterBottom>
-                    {name}
+                    {track.name}
                 </Typography>
             </Paper>
         </Grid>

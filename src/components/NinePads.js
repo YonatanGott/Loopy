@@ -28,7 +28,7 @@ const NinePads = ({ getTracks, removeTrack }) => {
         >
             {
                 audioSrc.map(track => {
-                    return <Pad key={track.name} src={track.src} name={track.name} getTracks={getTracks} removeTrack={removeTrack} />
+                    return <Pad key={track.name} track={track} getTracks={getTracks} removeTrack={removeTrack} />
                 })
             }
         </Grid>
