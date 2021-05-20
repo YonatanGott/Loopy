@@ -12,6 +12,7 @@ const useStyles = makeStyles(() => ({
     },
     title: {
         fontFamily: "Roboto",
+        overflowWrap: "break-word",
     },
     paperActive: {
         backgroundColor: "#00e5ff",
@@ -75,7 +76,7 @@ const Pad = ({ track, getTracks, removeTrack }) => {
                         :
                         <PlayArrowRoundedIcon className={classes.icon} onClick={handleClickedOn} />
                 }
-                <Typography className={classes.title} variant="h5" display="block" gutterBottom>
+                <Typography className={classes.title} variant="h5" gutterBottom>
                     {track.name}
                 </Typography>
             </Paper>
